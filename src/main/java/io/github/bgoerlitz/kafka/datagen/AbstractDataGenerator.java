@@ -38,7 +38,6 @@ public abstract class AbstractDataGenerator {
         }
 
         recordLimit = Integer.parseInt((String) properties.getOrDefault(RECORD_LIMIT_CONF, DEFAULT_RECORD_LIMIT));
-        int recordLimit;
 
     }
 

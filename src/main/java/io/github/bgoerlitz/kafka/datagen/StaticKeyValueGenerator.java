@@ -53,12 +53,15 @@ public class StaticKeyValueGenerator extends AbstractDataGenerator {
             catch(InterruptedException ex)
             {
                 Thread.currentThread().interrupt();
+                producer.close();
             }
 
             i++;
             running = (recordLimit <= 0 || i < recordLimit);
 
         }
+
+        producer.close();
     }
 
     public static void main(String[] args) {

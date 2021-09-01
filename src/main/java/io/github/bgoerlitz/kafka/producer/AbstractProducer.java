@@ -60,7 +60,26 @@ public abstract class AbstractProducer {
             }
         });
 
-        producer.flush();
+//        producer.flush();
+    }
+
+    /* Transactional flow is managed in the DataGenerator, so we just
+    expose the KafkaProducer transaction APIs.
+     */
+    public void beginTransaction() {
+        producer.beginTransaction();
+    }
+
+    public void commitTransaction() {
+        producer.commitTransaction();
+    }
+
+    public void abortTransaction() {
+        producer.abortTransaction();
+    }
+
+    public void initTransactions() {
+        producer.initTransactions();
     }
 
     public void close() {

@@ -18,7 +18,7 @@ public class ConfigUtil {
 
     public static final String DATAGEN_PRODUCER_CLASS_CONF = DATAGEN_PREFIX + PRODUCER_PREFIX + "classname";
 
-    public static final String DEFAULT_PROPERTY_FILE = "./hogwartskafka.properties";
+    public static final String DEFAULT_PROPERTY_FILE = "./config.properties";
 
 
     public static Properties getPropertiesFromFile(String propFile)

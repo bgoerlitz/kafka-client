@@ -53,11 +53,14 @@ public class NetworkDataGenerator extends AbstractDataGenerator {
 
                 } catch (Exception e) {
                     logger.error("Exception in client connection on port " + portNumber, e);
+                    producer.close();
                 }
             }
         } catch (Exception e) {
             logger.error("Exception in NetworkDataGenerator on port " + portNumber, e);
+            producer.close();
         }
+        producer.close();
     }
 
     public static void main(String[] args) {

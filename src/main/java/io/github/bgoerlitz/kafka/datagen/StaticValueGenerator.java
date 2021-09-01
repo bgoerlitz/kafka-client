@@ -24,6 +24,7 @@ public class StaticValueGenerator extends AbstractDataGenerator {
         super(propFile);
     }
 
+    @Override
     void configure(String propFile)
     {
         super.configure(propFile);
@@ -49,11 +50,14 @@ public class StaticValueGenerator extends AbstractDataGenerator {
             catch(InterruptedException ex)
             {
                 Thread.currentThread().interrupt();
+                producer.close();
             }
 
             i++;
             running = (recordLimit <= 0 || i < recordLimit);
         }
+
+        producer.close();
     }
 
     public static void main(String[] args) {
